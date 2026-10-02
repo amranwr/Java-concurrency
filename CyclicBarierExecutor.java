@@ -1,10 +1,10 @@
 import java.util.concurrent.CyclicBarrier;
 
-public class Task implements Runnable {
+public class CyclicBarierExecutor implements Runnable {
     private CyclicBarrier cyclicBarrier;
     private int id;
 
-    public Task(CyclicBarrier cyclicBarrier, int id) {
+    public CyclicBarierExecutor(CyclicBarrier cyclicBarrier, int id) {
         this.cyclicBarrier = cyclicBarrier;
         this.id = id;
     }

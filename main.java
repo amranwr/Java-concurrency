@@ -9,10 +9,10 @@ class main{
 	public static void main(String[] args) {
 		CyclicBarrier readyCountDownLatch = new CyclicBarrier(4);
 
-		Thread taskThread = new Thread(new Task(readyCountDownLatch,1));
-		Thread taskThread2 = new Thread(new Task(readyCountDownLatch,2 ));
-		Thread taskThread3 = new Thread(new Task(readyCountDownLatch,3 ));
-		Thread taskThread4 = new Thread(new Task(readyCountDownLatch,4));
+		Thread taskThread = new Thread(new CyclicBarierExecutor(readyCountDownLatch,1));
+		Thread taskThread2 = new Thread(new CyclicBarierExecutor(readyCountDownLatch,2 ));
+		Thread taskThread3 = new Thread(new CyclicBarierExecutor(readyCountDownLatch,3 ));
+		Thread taskThread4 = new Thread(new CyclicBarierExecutor(readyCountDownLatch,4));
 
 		taskThread.start();
 		taskThread2.start();
